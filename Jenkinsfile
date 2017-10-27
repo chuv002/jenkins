@@ -12,7 +12,7 @@ node('master') {
 			git url: repo
 		}
 		dir('jenkins') {
-			sh "#!/bin/sh -e\n git remote add my-credentials ${repo.replace('//github.com', '//'+USERPASS.replace('$', '%24') + '@github.com'}"
+			sh "#!/bin/sh -e\n git remote add my-credentials ${repo.replace('//github.com', '//'+USERPASS.replace('$', '%24') + '@github.com')}"
 			sh "git status"
 		}
 	}
